@@ -1,0 +1,25 @@
+//Object Detection Alarm
+
+// Define pins numbers
+const int trigPin = 13;  //Connect Trig pin in Ultrasonic Sensor to Arduino Pin 13
+const int echoPin = 12;  //Connect Echo pin in Ultrasonic Sensor to Arduino Pin 13
+const int buzzer = 11;   //Connect Positive pin of Buzzer to Arduino Pin 11
+const int ledPin = 10;   //Connect Positive pin of LED to Arduino Pin 10
+
+// Define variables
+long duration;
+int distance;
+int safetyDistance;
+
+
+void setup() {
+pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
+pinMode(echoPin, INPUT); // Sets the echoPin as an Input
+pinMode(buzzer, OUTPUT);
+pinMode(ledPin, OUTPUT);
+Serial.begin(9600); // Starts the serial communication
+}
+
+
+void loop() {
+// Clears the trigPin
